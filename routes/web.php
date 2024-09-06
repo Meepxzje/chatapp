@@ -2,12 +2,20 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('dashboard');
+
+    Route::get('/user/{user}', function(){
+
+    })->name('chat.user');
+
+    Route::get('/group/{group}', function(){
+
+    })->name('chat.group');
 });
 
 
